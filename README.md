@@ -6,6 +6,8 @@
 # About
 IOMath-rs is an adaptation for rust which is based on [IOMath (C++)](https://github.com/x4kkk3r/IOMath)
 
+[Documentation](https://docs.rs/iomath/0.1.1/iomath/)
+
 # Tests
 To run the tests type following in the command line:
 ```
