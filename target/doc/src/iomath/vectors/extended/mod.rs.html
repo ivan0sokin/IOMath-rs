@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source to the Rust file `src/vectors/extended/mod.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>mod.rs.html -- source</title><link rel="stylesheet" type="text/css" href="../../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../../dark.css"><link rel="stylesheet" type="text/css" href="../../../../light.css" id="themeStyle"><script src="../../../../storage.js"></script><noscript><link rel="stylesheet" href="../../../../noscript.css"></noscript><link rel="shortcut icon" href="../../../../favicon.ico"><style type="text/css">#crate-search{background-image:url("../../../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><a href='../../../../iomath/index.html'><div class='logo-container'><img src='../../../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../../../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../../../../theme.js"></script><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><a id="settings-menu" href="../../../../settings.html"><img src="../../../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><pre class="line-numbers"><span id="1"> 1</span>
+<span id="2"> 2</span>
+<span id="3"> 3</span>
+<span id="4"> 4</span>
+<span id="5"> 5</span>
+<span id="6"> 6</span>
+<span id="7"> 7</span>
+<span id="8"> 8</span>
+<span id="9"> 9</span>
+<span id="10">10</span>
+<span id="11">11</span>
+<span id="12">12</span>
+<span id="13">13</span>
+<span id="14">14</span>
+<span id="15">15</span>
+<span id="16">16</span>
+<span id="17">17</span>
+<span id="18">18</span>
+<span id="19">19</span>
+<span id="20">20</span>
+<span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
+<span id="34">34</span>
+<span id="35">35</span>
+<span id="36">36</span>
+<span id="37">37</span>
+<span id="38">38</span>
+<span id="39">39</span>
+<span id="40">40</span>
+<span id="41">41</span>
+<span id="42">42</span>
+<span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
+<span id="46">46</span>
+<span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+</pre><div class="example-wrap"><pre class="rust ">
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">t_vectors</span>;
+
+<span class="kw">use</span> <span class="ident">t_vectors</span>::<span class="ident">t_vector_2</span>::<span class="ident">TVector2</span>;
+<span class="comment">// use t_vectors::t_vector_3::TVector4;</span>
+<span class="comment">// use t_vectors::t_vector_4::TVector4;</span>
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">F32Vector2</span> <span class="op">=</span> <span class="ident">TVector2</span><span class="op">&lt;</span><span class="ident">f32</span><span class="op">&gt;</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">F64Vector2</span> <span class="op">=</span> <span class="ident">TVector2</span><span class="op">&lt;</span><span class="ident">f64</span><span class="op">&gt;</span>;
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">I8Vector2</span> <span class="op">=</span> <span class="ident">TVector2</span><span class="op">&lt;</span><span class="ident">i8</span><span class="op">&gt;</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">I16Vector2</span> <span class="op">=</span> <span class="ident">TVector2</span><span class="op">&lt;</span><span class="ident">i16</span><span class="op">&gt;</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">I32Vector2</span> <span class="op">=</span> <span class="ident">TVector2</span><span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">I64Vector2</span> <span class="op">=</span> <span class="ident">TVector2</span><span class="op">&lt;</span><span class="ident">i64</span><span class="op">&gt;</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">I128Vector2</span> <span class="op">=</span> <span class="ident">TVector2</span><span class="op">&lt;</span><span class="ident">i128</span><span class="op">&gt;</span>;
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">U8Vector2</span> <span class="op">=</span> <span class="ident">TVector2</span><span class="op">&lt;</span><span class="ident">u8</span><span class="op">&gt;</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">U16Vector2</span> <span class="op">=</span> <span class="ident">TVector2</span><span class="op">&lt;</span><span class="ident">u16</span><span class="op">&gt;</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">U32Vector2</span> <span class="op">=</span> <span class="ident">TVector2</span><span class="op">&lt;</span><span class="ident">u32</span><span class="op">&gt;</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">U64Vector2</span> <span class="op">=</span> <span class="ident">TVector2</span><span class="op">&lt;</span><span class="ident">u64</span><span class="op">&gt;</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">U128Vector2</span> <span class="op">=</span> <span class="ident">TVector2</span><span class="op">&lt;</span><span class="ident">u128</span><span class="op">&gt;</span>;
+
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">BVector2</span> <span class="op">=</span> <span class="ident">TVector2</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span>;
+
+<span class="comment">// pub type F32Vector3 = TVector3&lt;f32&gt;;</span>
+<span class="comment">// pub type F64Vector3 = TVector3&lt;f64&gt;;</span>
+
+<span class="comment">// pub type I8Vector3 = TVector3&lt;i8&gt;;</span>
+<span class="comment">// pub type I16Vector3 = TVector3&lt;i16&gt;;</span>
+<span class="comment">// pub type I32Vector3 = TVector3&lt;i32&gt;;</span>
+<span class="comment">// pub type I64Vector3 = TVector3&lt;i64&gt;;</span>
+<span class="comment">// pub type I128Vector3 = TVector3&lt;i128&gt;;</span>
+
+<span class="comment">// pub type U8Vector3 = TVector3&lt;u8&gt;;</span>
+<span class="comment">// pub type U16Vector3 = TVector3&lt;u16&gt;;</span>
+<span class="comment">// pub type U32Vector3 = TVector3&lt;u32&gt;;</span>
+<span class="comment">// pub type U64Vector3 = TVector3&lt;u64&gt;;</span>
+<span class="comment">// pub type U128Vector3 = TVector3&lt;u128&gt;;</span>
+
+<span class="comment">// pub type BVector3 = TVector3&lt;bool&gt;;</span>
+
+<span class="comment">// pub type F32Vector4 = TVector4&lt;f32&gt;;</span>
+<span class="comment">// pub type F64Vector4 = TVector4&lt;f64&gt;;</span>
+
+<span class="comment">// pub type I8Vector4 = TVector4&lt;i8&gt;;</span>
+<span class="comment">// pub type I16Vector4 = TVector4&lt;i16&gt;;</span>
+<span class="comment">// pub type I32Vector4 = TVector4&lt;i32&gt;;</span>
+<span class="comment">// pub type I64Vector4 = TVector4&lt;i64&gt;;</span>
+<span class="comment">// pub type I128Vector4 = TVector4&lt;i128&gt;;</span>
+
+<span class="comment">// pub type U8Vector4 = TVector4&lt;u8&gt;;</span>
+<span class="comment">// pub type U16Vector4 = TVector4&lt;u16&gt;;</span>
+<span class="comment">// pub type U32Vector4 = TVector4&lt;u32&gt;;</span>
+<span class="comment">// pub type U64Vector4 = TVector4&lt;u64&gt;;</span>
+<span class="comment">// pub type U128Vector4 = TVector4&lt;u128&gt;;</span>
+
+<span class="comment">// pub type BVector4 = TVector4&lt;bool&gt;;</span></pre></div>
+</section><section id="search" class="content hidden"></section><section class="footer"></section><script>window.rootPath = "../../../../";window.currentCrate = "iomath";</script><script src="../../../../main.js"></script><script src="../../../../source-script.js"></script><script src="../../../../source-files.js"></script><script defer src="../../../../search-index.js"></script></body></html>

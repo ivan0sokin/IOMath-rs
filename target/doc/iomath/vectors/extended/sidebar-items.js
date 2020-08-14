@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["t_vectors",""]],"type":[["BVector2",""],["F32Vector2",""],["F64Vector2",""],["I128Vector2",""],["I16Vector2",""],["I32Vector2",""],["I64Vector2",""],["I8Vector2",""],["U128Vector2",""],["U16Vector2",""],["U32Vector2",""],["U64Vector2",""],["U8Vector2",""]]});

@@ -1,8 +1,6 @@
-pub mod t_vectors;
+mod t_vectors;
 
-use t_vectors::t_vector_2::TVector2;
-// use t_vectors::t_vector_3::TVector4;
-// use t_vectors::t_vector_4::TVector4;
+use t_vectors::*;
 
 pub type F32Vector2 = TVector2<f32>;
 pub type F64Vector2 = TVector2<f64>;
