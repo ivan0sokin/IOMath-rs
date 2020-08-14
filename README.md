@@ -6,4 +6,4 @@
 IOMath-rs is an adaptation for rust based on [IOMath (C++)](https://github.com/x4kkk3r/IOMath)
 
 # License
-IOMath-rs is licensed under the [MIT license](LICENSE)
+IOMath-rs is licensed under the [MIT](LICENSE-MIT) or [Apache 2.0](LICENSE-APACHE_2_0) license.
