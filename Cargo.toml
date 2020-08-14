@@ -1,6 +1,6 @@
 [package]
 name = "iomath"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["x4kkk3r <x4kkk3r@github.com>"]
 edition = "2018"
 description = "iomath is a fast math rust-library."
