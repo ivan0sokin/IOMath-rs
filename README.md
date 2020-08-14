@@ -7,7 +7,7 @@
 IOMath-rs is an adaptation for rust which is based on [IOMath (C++)](https://github.com/x4kkk3r/IOMath)
 
 # Tests
-To run tests type following in the command line:
+To run the tests type following in the command line:
 ```
 cargo test
 ```
