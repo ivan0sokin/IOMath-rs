@@ -1,1 +1,0 @@
-initSidebarItems({"mod":[["extended",""]],"type":[["FVector2",""],["IVector2",""],["UVector2",""],["Vector2",""]]});
