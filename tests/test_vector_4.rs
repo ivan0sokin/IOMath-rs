@@ -16,6 +16,15 @@ fn vector_4_new() {
 }
 
 #[test]
+fn vector_4_copy() {
+    let vector_from = Vector4::new(0.0, 1.1, 2.2, 3.3);
+    let vector_to = vector_from;
+
+    assert_eq!(vector_from, Vector4::new(0.0, 1.1, 2.2, 3.3));
+    assert_eq!(vector_to, Vector4::new(0.0, 1.1, 2.2, 3.3));
+}
+
+#[test]
 fn vector_4_from_scalar() {
     let vector = Vector4::from_scalar(1.7);
 
@@ -65,22 +74,6 @@ fn vector_4_from_vector_value() {
 }
 
 #[test]
-fn vector_4_from_quaternion() {
-    let vector = Vector4::from_quaternion(Quaternion::identity());
-
-    assert_eq!(vector, Vector4::new(0.0, 0.0, 0.0, 1.0));
-}
-
-#[test]
-fn vector_4_copy() {
-    let vector_from = Vector4::new(0.0, 1.1, 2.2, 3.3);
-    let vector_to = vector_from;
-
-    assert_eq!(vector_from, Vector4::new(0.0, 1.1, 2.2, 3.3));
-    assert_eq!(vector_to, Vector4::new(0.0, 1.1, 2.2, 3.3));
-}
-
-#[test]
 fn vector_4_from_vector_2() {
     let vector = Vector4::from(Vector2::new(1.5, -5.6));
 
@@ -92,6 +85,13 @@ fn vector_4_from_vector_3() {
     let vector = Vector4::from(Vector3::new(1.5, -5.6, 2.4));
 
     assert_eq!(vector, Vector4::new(1.5, -5.6, 2.4, 0.0));
+}
+
+#[test]
+fn vector_4_from_quaternion() {
+    let vector = Vector4::from(Quaternion::identity());
+
+    assert_eq!(vector, Vector4::new(0.0, 0.0, 0.0, 1.0));
 }
 
 #[test]

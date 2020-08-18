@@ -46,49 +46,6 @@ impl<T> TVector2<T> where T : Zero<T> + Copy {
             y: scalar
         }
     }
-
-    /// Creates TVector2&lt;type&gt; whose x and y equal to TVector3&lt;type&gt;'s x and y
-    /// ```
-    /// use iomath::vectors::{ Vector2, Vector3 };
-    /// 
-    /// let vector = Vector2::from_vector_3(Vector3::new(5.6, 3.8, 2.9));
-    /// assert_eq!(vector, Vector2::new(5.6, 3.8))
-    /// ```
-    pub fn from_vector_3(vector: TVector3<T>) -> Self {
-        Self {
-            x: vector.x,
-            y: vector.y
-        }
-    }
-
-    /// Creates TVector2&lt;type&gt; whose x and y equal to TVector4&lt;type&gt;'s x and y
-    /// ```
-    /// use iomath::vectors::{ Vector2, Vector4 };
-    /// 
-    /// let vector = Vector2::from_vector_4(Vector4::new(0.3, 4.5, 2.9, 7.7));
-    /// assert_eq!(vector, Vector2::new(0.3, 4.5))
-    /// ```
-    pub fn from_vector_4(vector: TVector4<T>) -> Self {
-        Self {
-            x: vector.x,
-            y: vector.y
-        }
-    }
-
-    /// Creates TVector2&lt;type&gt; whose x and y equal to TQuaternion&lt;type&gt;'s x and y
-    /// ```
-    /// use iomath::vectors::{ Vector2, Vector4 };
-    /// use iomath::quaternions::Quaternion;
-    /// 
-    /// let vector = Vector2::from_quaternion(Quaternion::identity());
-    /// assert_eq!(vector, Vector2::new(0.0, 0.0))
-    /// ```
-    pub fn from_quaternion(quat: TQuaternion<T>) -> Self {
-        Self {
-            x: quat.x,
-            y: quat.y
-        }
-    }
 }
 
 impl<T> TVector3<T> where T : Zero<T> + Copy {
@@ -137,21 +94,6 @@ impl<T> TVector3<T> where T : Zero<T> + Copy {
         }
     }
 
-    /// Creates TVector3&lt;type&gt; whose x, y and z equal to TVector4&lt;type&gt;'s x, y and z
-    /// ```
-    /// use iomath::vectors::{ Vector3, Vector4 };
-    /// 
-    /// let vector = Vector3::from_vector_4(Vector4::new(0.3, 4.5, 2.9, 7.7));
-    /// assert_eq!(vector, Vector3::new(0.3, 4.5, 2.9))
-    /// ```
-    pub fn from_vector_4(vector: TVector4<T>) -> Self {
-        Self {
-            x: vector.x,
-            y: vector.y,
-            z: vector.z
-        }
-    }
-
     /// Creates TVector3&lt;type&gt; whose x equals to value, y and z equal to TVector2&lt;type&gt;'s x and y
     /// ```
     /// use iomath::vectors::{ Vector3, Vector2 };
@@ -179,22 +121,6 @@ impl<T> TVector3<T> where T : Zero<T> + Copy {
             x: vector.x,
             y: vector.y,
             z: value
-        }
-    }
-
-    /// Creates TVector3&lt;type&gt; whose x, y and z equals to TQuaternion&lt;type&gt;'s x, y and z
-    /// ```
-    /// use iomath::vectors::Vector3;
-    /// use iomath::quaternions::Quaternion;
-    /// 
-    /// let vector = Vector3::from_quaternion(Quaternion::identity());
-    /// assert_eq!(vector, Vector3::new(0.0, 0.0, 0.0))
-    /// ```
-    pub fn from_quaternion(quat: TQuaternion<T>) -> Self {
-        Self {
-            x: quat.x,
-            y: quat.y,
-            z: quat.z
         }
     }
 }
@@ -343,23 +269,6 @@ impl<T> TVector4<T> where T : Zero<T> + Copy {
             w: value
         }
     }
-
-    /// Creates TVector4&lt;type&gt; whose x, y, z and w equal to TQuaternion&lt;type&gt;'s x, y, z and w
-    /// ```
-    /// use iomath::vectors::Vector4;
-    /// use iomath::quaternions::Quaternion;
-    /// 
-    /// let vector = Vector4::from_quaternion(Quaternion::identity());
-    /// assert_eq!(vector, Vector4::new(0.0, 0.0, 0.0, 1.0));
-    /// ```
-    pub fn from_quaternion(quat: TQuaternion<T>) -> Self {
-        Self {
-            x: quat.x,
-            y: quat.y,
-            z: quat.z,
-            w: quat.w
-        }
-    }
 }
 
 impl<T> Copy for TVector2<T> where T : Copy { }
@@ -371,6 +280,33 @@ impl<T> Clone for TVector2<T> where T : Copy {
     fn clone_from(&mut self, source: &Self) {
         self.x = source.x;
         self.y = source.y;
+    }
+}
+
+impl<T> From<TVector3<T>> for TVector2<T> {
+    fn from(vector: TVector3<T>) -> Self {
+        Self {
+            x: vector.x,
+            y: vector.y
+        }
+    }
+}
+
+impl<T> From<TVector4<T>> for TVector2<T> {
+    fn from(vector: TVector4<T>) -> Self {
+        Self {
+            x: vector.x,
+            y: vector.y
+        }
+    }
+}
+
+impl<T> From<TQuaternion<T>> for TVector2<T> {
+    fn from(quat: TQuaternion<T>) -> Self {
+        Self {
+            x: quat.x,
+            y: quat.y
+        }
     }
 }
 
@@ -802,6 +738,26 @@ impl<T> From<TVector2<T>> for TVector3<T> where T : Zero<T> {
             x: vector.x,
             y: vector.y,
             z: T::zero()
+        }
+    }
+}
+
+impl<T> From<TVector4<T>> for TVector3<T> {
+    fn from(vector: TVector4<T>) -> Self {
+        Self {
+            x: vector.x,
+            y: vector.y,
+            z: vector.z
+        }
+    }
+}
+
+impl<T> From<TQuaternion<T>> for TVector3<T> {
+    fn from(quat: TQuaternion<T>) -> Self {
+        Self {
+            x: quat.x,
+            y: quat.y,
+            z: quat.z
         }
     }
 }
@@ -1292,6 +1248,17 @@ impl<T> From<TVector3<T>> for TVector4<T> where T : Zero<T> {
             y: vector.y,
             z: vector.z,
             w: T::zero()
+        }
+    }
+}
+
+impl<T> From<TQuaternion<T>> for TVector4<T> {
+    fn from(quat: TQuaternion<T>) -> Self {
+        Self {
+            x: quat.x,
+            y: quat.y,
+            z: quat.z,
+            w: quat.w
         }
     }
 }
