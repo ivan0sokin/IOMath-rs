@@ -9,9 +9,9 @@ IOMath-rs is an adaptation for rust which is based on [IOMath (C++)](https://git
 # Installation
 To install the library type this in your Cargo.toml under the dependecies:
 ```
-iomath = "0.1.1"
+iomath = "0.1.2"
 ```
-[Documentation](https://docs.rs/iomath/0.1.1/iomath/)
+[Documentation](https://docs.rs/iomath/0.1.2/iomath/)
 
 # Tests
 To run the tests type following in the command line:
