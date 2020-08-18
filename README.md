@@ -11,6 +11,7 @@ To install the library type this in your Cargo.toml under the dependecies:
 ```
 iomath = "0.1.1"
 ```
+[Documentation](https://docs.rs/iomath/0.1.1/iomath/)
 
 # Tests
 To run the tests type following in the command line:
