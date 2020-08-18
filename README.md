@@ -16,6 +16,8 @@ iomath = "0.1.2"
 # Tests
 To run the tests type following in the command line:
 ```
+git clone https://github.com/x4kkk3r/IOMath-rs.git
+cd IOMath-rs
 cargo test
 ```
 
