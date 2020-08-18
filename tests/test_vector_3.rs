@@ -1,9 +1,6 @@
 use iomath::vectors::{ Vector3, UVector3, Vector4, Vector2 };
 use iomath::quaternions::Quaternion;
 
-use std::ops::*;
-use std::fmt::*;
-
 #[test]
 fn vector_3_empty() {
     let vector = Vector3::empty();
@@ -60,6 +57,13 @@ fn vector_3_copy() {
 
     assert_eq!(vector_from, Vector3::new(0.0, 1.1, 2.2));
     assert_eq!(vector_to, Vector3::new(0.0, 1.1, 2.2));
+}
+
+#[test]
+fn vector_3_from_vector_2() {
+    let vector = Vector3::from(Vector2::new(5.5, -3.3));
+
+    assert_eq!(vector, Vector3::new(5.5, -3.3, 0.0));
 }
 
 #[test]
