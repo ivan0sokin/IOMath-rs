@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/x4kkk3r/IOMath-rs.svg?branch=master)](https://travis-ci.com/x4kkk3r/IOMath-rs)
+[[![Build Status](https://travis-ci.com/x4kkk3r/IOMath-rs.svg?branch=master)](https://travis-ci.com/x4kkk3r/IOMath-rs)](https://img.shields.io/travis/com/ivan0sokin/IOMath-rs)
 [![License](https://img.shields.io/crates/l/iomath)]()
 [![Version](https://img.shields.io/crates/v/iomath)]()
 # IOMath-rs
